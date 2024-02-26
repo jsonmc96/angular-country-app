@@ -20,13 +20,17 @@ export class CountryPageComponent implements OnInit {
     private cs: CountriesService) { }
 
   ngOnInit(): void {
+    //logic of parameter capture from url
     this.ar.params
       .pipe(
         switchMap(({ id }) => this.cs.searchByAlphaCode(id))
       )
       .subscribe((country) => {
+        // redirect url in the case that country is undefined
         if (!country) return this.router.navigateByUrl('');
-        this.translations = Object.keys(country.translations)
+        // cast object keys to array, for use *ngFor on component.html
+        this.translations = Object.keys(country.translations);
+        // return result as country
         return this.country = country;
       });
   }

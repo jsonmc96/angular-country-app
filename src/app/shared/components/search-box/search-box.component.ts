@@ -1,12 +1,11 @@
-import { Component, EventEmitter, Input, Output, input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-box',
   templateUrl: './search-box.component.html',
-  styles: [
-
-  ]
+  styles: []
 })
+
 export class SearchBoxComponent {
 
   @Input()
@@ -16,6 +15,6 @@ export class SearchBoxComponent {
   public onValue = new EventEmitter<string>();
 
   emitValue(value: string): void {
-    this.onValue.emit( value );
+    this.onValue.emit(value);
   }
 }
