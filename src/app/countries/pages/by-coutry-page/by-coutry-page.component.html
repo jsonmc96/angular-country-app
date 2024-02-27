@@ -5,7 +5,8 @@
 <div class="row">
   <div class="col">
     <!-- Search Box -->
-    <app-search-box (onValue)="searchByCountry($event)" placeholder="Buscar Por Pais"></app-search-box>
+    <!-- <app-search-box (onValue)="searchByCountry($event)" placeholder="Buscar Por Pais"></app-search-box> -->
+    <app-search-box (onDebounce)="searchByCountry($event)" placeholder="Buscar Por Pais"></app-search-box>
   </div>
 </div>
 
