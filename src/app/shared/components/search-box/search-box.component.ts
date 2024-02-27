@@ -28,8 +28,8 @@ export class SearchBoxComponent implements OnInit {
         debounceTime(300)
       )
       .subscribe(value => {
-        console.log("This is flows", { value })
-      })
+        this.onDebounce.emit(value)
+      });
   }
 
   emitValue(value: string): void {
